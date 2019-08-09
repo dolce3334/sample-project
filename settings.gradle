@@ -1,0 +1,6 @@
+rootProject.name = 'wicc-demo-project'
+
+include 'wicc-demo-webapi'
+include 'wicc-demo-entity'
+include 'wicc-demo-commons'
+include 'wicc-demo-xservice'

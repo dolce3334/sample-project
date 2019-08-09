@@ -1,0 +1,17 @@
+.gradle/
+build/
+.settings/
+.project
+.classpath
+*.class
+.idea
+*.iml
+.gradle
+/local.properties
+.idea/workspace.xml
+/.idea/libraries
+.idea/*/
+.DS_Store
+/build
+/*/out/
+out
