@@ -1,6 +1,6 @@
-rootProject.name = 'wicc-demo-project'
+rootProject.name = 'wicc-rcenter-svc'
 
-include 'wicc-demo-webapi'
-include 'wicc-demo-entity'
-include 'wicc-demo-commons'
-include 'wicc-demo-xservice'
+include 'wicc-rcenter-webapi'
+include 'wicc-rcenter-entity'
+include 'wicc-rcenter-commons'
+include 'wicc-rcenter-xservice'
