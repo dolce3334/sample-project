@@ -26,7 +26,7 @@ dependencies {
 }
 
 jar {
-    baseName = 'wicc-rcenter-entity'
+    baseName = 'wicc-sample-entity'
     version = "$version"
 }
 
@@ -50,11 +50,11 @@ querydsl {
     jdbcUrl = 'jdbc:mysql://dev-mysql.wic.me:3306/wicc-bet?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8' +
             '&allowMultiQueries=true&useSSL=false'
     domainSrcPath = "$project.projectDir/src/main/java/"
-    domainPackageName = 'com.waykichain.rcenter.entity.domain'
+    domainPackageName = 'com.waykichain.sample.entity.domain'
     repositorySrcPath = "$project.projectDir/src/main/kotlin/"
-    repositoryPackageName = 'com.waykichain.rcenter.repository'
-    serviceSrcPath = "$project.projectDir/../wicc-rcenter-commons/src/main/kotlin/"
-    servicePackageName = 'com.waykichain.rcenter.commons.biz.service'
+    repositoryPackageName = 'com.waykichain.sample.repository'
+    serviceSrcPath = "$project.projectDir/../wicc-sample-commons/src/main/kotlin/"
+    servicePackageName = 'com.waykichain.sample.commons.biz.service'
 }
 
 task genCode(dependsOn: generateQueryDSL) {

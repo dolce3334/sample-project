@@ -1,4 +1,4 @@
-package com.waykichain.sample.commons.biz.env
+package com.waykichain.sample.commons.biz.env.mysql
 
 import com.waykichain.commons.util.BaseEnv
 

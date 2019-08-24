@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
  */
 
 @SpringBootApplication
-@MapperScan("com/waykichin/rcenter/mapper")
+@MapperScan("com/waykichin/sample/mapper")
 open class Application
 
 fun main(args: Array<String>) {

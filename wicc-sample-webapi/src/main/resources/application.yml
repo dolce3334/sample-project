@@ -48,7 +48,7 @@ spring:
 
 mybatis:
   mapper-locations:
-    - classpath*:com.waykichain.rcenter.mapper/*.xml
+    - classpath*:com.waykichain.sample.mapper/*.xml
   configuration:
    map-underscore-to-camel-case: true
    use-generated-keys: true

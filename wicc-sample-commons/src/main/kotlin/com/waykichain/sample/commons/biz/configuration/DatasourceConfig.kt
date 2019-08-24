@@ -1,7 +1,7 @@
 package com.waykichain.sample.commons.biz.configuration
 
 import com.alibaba.druid.pool.DruidDataSource
-import com.waykichain.sample.commons.biz.env.Environment
+import com.waykichain.sample.commons.biz.env.mysql.Environment
 import org.apache.ibatis.session.SqlSessionFactory
 import org.mybatis.spring.SqlSessionFactoryBean
 import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer

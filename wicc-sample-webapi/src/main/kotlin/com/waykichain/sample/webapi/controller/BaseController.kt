@@ -1,4 +1,4 @@
-package com.waykichain.rcenter.webapi.controller
+package com.waykichain.sample.webapi.controller
 
 import org.springframework.beans.factory.annotation.Autowired
 import java.net.InetAddress

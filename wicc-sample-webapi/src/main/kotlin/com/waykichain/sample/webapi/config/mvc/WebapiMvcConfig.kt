@@ -1,7 +1,7 @@
-package com.waykichain.rcenter.webapi.config.mvc
+package com.waykichain.sample.webapi.config.mvc
 
-import com.waykichain.rcenter.commons.biz.configuration.CommonMvcConfig
-import com.waykichain.rcenter.webapi.config.interceptor.RequestInterceptor
+import com.waykichain.sample.commons.biz.configuration.CommonMvcConfig
+import com.waykichain.sample.webapi.config.interceptor.RequestInterceptor
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry

@@ -3,5 +3,5 @@ apply plugin: 'application'
 mainClassName = "com.waykichain.ApplicationKt"
 
 dependencies {
-    compile project(":wicc-rcenter-commons")
+    compile project(":wicc-sample-commons")
 }

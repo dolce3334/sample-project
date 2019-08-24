@@ -20,7 +20,7 @@ buildscript {
 }
 
 jar {
-    baseName = 'wicc-demo-commons'
+    baseName = 'wicc-sample-commons'
     version = "$version"
 }
 
@@ -32,7 +32,7 @@ dependencies {
     compile 'org.apache.poi:poi-ooxml:4.0.0'
     compile 'org.apache.poi:poi:4.0.0'
 
-    compile project(":wicc-rcenter-entity")
+    compile project(":wicc-sample-entity")
 }
 
 

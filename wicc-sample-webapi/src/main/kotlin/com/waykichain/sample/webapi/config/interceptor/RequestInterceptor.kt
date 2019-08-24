@@ -1,10 +1,12 @@
-package com.waykichain.rcenter.webapi.config.interceptor
+package com.waykichain.sample.webapi.config.interceptor
 import org.slf4j.LoggerFactory
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-
+/**
+ *  拦截器，可提供统一的任务处理工作，比如token校验
+*/
 open class RequestInterceptor : HandlerInterceptorAdapter() {
 
     override fun preHandle(request: HttpServletRequest? , response: HttpServletResponse? , handler: Any?): Boolean {
@@ -15,8 +17,7 @@ open class RequestInterceptor : HandlerInterceptorAdapter() {
                         || requestURI.contains("api-docs")
                         || requestURI.contains("/error")
                         || requestURI.contains("ops")
-                        || requestURI.contains("/admin/log")
-                        || requestURI.contains("/login"))) {
+                    )) {
             return true
         }
 

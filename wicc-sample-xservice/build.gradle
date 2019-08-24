@@ -20,13 +20,13 @@ buildscript {
 }
 
 jar {
-    baseName = 'wicc-rcenter-xservice'
+    baseName = 'wicc-sample-xservice'
     version = "$version"
 }
 
 dependencies {
     compile 'com.waykichain:wicc-commons:0.3.2-SNAPSHOT'
-    compile project(':wicc-rcenter-commons')
+    compile project(':wicc-sample-commons')
 }
 
 uploadArchives {
