@@ -50,6 +50,7 @@ subprojects {
 
     repositories {
         maven { url "http://nexus.wisedev.cn/content/groups/public" }
+        maven { url "https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.client.mqttv3" }
         mavenCentral()
         jcenter()
     }
@@ -84,6 +85,9 @@ subprojects {
         compile 'org.codehaus.groovy:groovy-backports-compat23:2.4.5'
 
         compile 'joda-time:joda-time:2.9.9'
+
+        // https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.client.mqttv3
+        compile group: 'org.eclipse.paho', name: 'org.eclipse.paho.client.mqttv3', version: '1.1.1'
 
         testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
 
