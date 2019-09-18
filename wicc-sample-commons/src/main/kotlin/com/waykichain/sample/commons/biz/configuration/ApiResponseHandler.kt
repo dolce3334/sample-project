@@ -173,7 +173,7 @@ open class ApiResponseHandler : ResponseBodyAdvice<Any> {
     }
 
     private fun getTimestamp(request: HttpServletRequest): Long? {
-        return request.getAttribute(RequestType.REQUEST_TIMESTAMP_TAG)!!.toString().toLong()
+        return request.getAttribute(RequestType.REQUEST_TIMESTAMP_TAG)?.toString()?.toLong() ?: Date().time
     }
 
     private fun getRequestUuid(request: HttpServletRequest): String? {
