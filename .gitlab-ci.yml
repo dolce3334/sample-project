@@ -1,0 +1,54 @@
+variables:
+  CICD_HOME_DEV: '/home/devops/cicd_scripts/cicd'
+
+  WICC_MASTER_CONF_HOME_DEV: '/home/devops/cicd_scripts/conf/bet/master'
+  WICC_TEST_CONF_HOME_DEV: '/home/devops/cicd_scripts/conf/bet/test'
+
+  CI_DEBUG_TRACE: 'false'
+  WICC_VERSION: 0.200.8
+  JOBS_ADMIN_URL: 'http://autotest-jobs.wisedev.cn'
+  TASK_IP: 'dev.wisedev.cn'
+
+stages:
+  - deploy
+
+build for master:
+  stage: deploy
+  cache:
+    paths:
+    - .gradle
+  script:
+    - pwd
+    - ./gradlew clean build -x test --refresh-dependencies
+    - ./gradlew wicc-bet-xservice:upload
+    - ./gradlew wicc-betpay-xservice:upload
+
+    - export ARTIFACTS_MASTER='/home/devops/artifacts/master'
+    - cp ./wicc-sample-task/build/distributions/*.tar $ARTIFACTS_MASTER/wicc-sample-task.tar
+    - bash -x $CICD_HOME_DEV/deploy-bet-task.sh $WICC_MASTER_CONF_HOME_DEV/bet.conf task-sample wicc-sample-task 10001 10101 wicc-sample-executor $JOBS_ADMIN_URL $TASK_IP master
+  tags:
+    - wicc-dev
+  only:
+    - master
+
+build for test:
+  stage: deploy
+  cache:
+    paths:
+    - .gradle
+  script:
+    - pwd
+    - sed -i -e 's/-SNAPSHOT/-TEST/g' ./build.gradle
+    - sed -i -e 's/-SNAPSHOT/-TEST/g' ./*/build.gradle
+
+    - ./gradlew clean build -x test --refresh-dependencies
+    - ./gradlew wicc-bet-xservice:upload
+    - ./gradlew wicc-betpay-xservice:upload
+
+    - export ARTIFACTS_TEST='/home/devops/artifacts/test'
+
+    - cp ./wicc-sample-task/build/distributions/*.tar $ARTIFACTS_TEST/wicc-sample-task.tar
+  tags:
+    - wicc-test
+  only:
+    - test
