@@ -20,8 +20,6 @@ build for master:
   script:
     - pwd
     - ./gradlew clean build -x test --refresh-dependencies
-    - ./gradlew wicc-bet-xservice:upload
-    - ./gradlew wicc-betpay-xservice:upload
 
     - export ARTIFACTS_MASTER='/home/devops/artifacts/master'
     - cp ./wicc-sample-task/build/distributions/*.tar $ARTIFACTS_MASTER/wicc-sample-task.tar
