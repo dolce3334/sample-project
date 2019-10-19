@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      profile: ${env:master}
+      label: ${env:master}
+      uri: http://${configHost:10.0.0.4}:${configPort:22015}/
+      name: configProperties
+management:
+  port: 8000
+  security:
+    enabled: false
+endpoints:
+  enabled: false
+  refresh:
+    enabled: true
